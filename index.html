@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Cafe Management System</h1>
+            <div class="header-stats">
+                <div class="stat-card">
+                    <span class="stat-label">Total Orders</span>
+                    <span class="stat-value" id="totalOrders">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Revenue</span>
+                    <span class="stat-value" id="totalRevenue">$0.00</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <!-- Menu Section -->
+            <section class="menu-section">
+                <h2>Menu Management</h2>
+                <div class="menu-controls">
+                    <input type="text" id="itemName" placeholder="Item name" />
+                    <input type="number" id="itemPrice" placeholder="Price" step="0.01" min="0" />
+                    <select id="itemCategory">
+                        <option value="Coffee">Coffee</option>
+                        <option value="Tea">Tea</option>
+                        <option value="Pastries">Pastries</option>
+                        <option value="Sandwiches">Sandwiches</option>
+                        <option value="Beverages">Beverages</option>
+                    </select>
+                    <button onclick="addMenuItem()" class="btn btn-primary">Add Item</button>
+                </div>
+
+                <div class="menu-grid" id="menuGrid"></div>
+            </section>
+
+            <!-- Orders Section -->
+            <section class="orders-section">
+                <h2>Current Orders</h2>
+                <div class="order-controls">
+                    <select id="orderItem">
+                        <option value="">Select item</option>
+                    </select>
+                    <input type="number" id="orderQuantity" placeholder="Qty" min="1" value="1" />
+                    <input type="text" id="customerName" placeholder="Customer name" />
+                    <button onclick="createOrder()" class="btn btn-success">Create Order</button>
+                </div>
+
+                <div class="orders-list" id="ordersList"></div>
+            </section>
+        </div>
+
+        <!-- Order History -->
+        <section class="history-section">
+            <h2>Order History</h2>
+            <div class="history-list" id="historyList"></div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
